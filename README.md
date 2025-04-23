@@ -1,3 +1,5 @@
 # FGC-PWA2025
 Proyecto integrador PWA FGC
-Proyecto Integrador de Programación Web Avanzada. Aplicación ASP.NET MVC que permite gestionar una colección de películas con funcionalidades de ABM y filtros.
+Gestor de Películas WEB
+El propósito del proyecto es crear una página web que permita gestionar una colección de películas. Se podrán agregar, editar, eliminar y consultar películas. 
+Listado de películas/formulario de contacto/ agregar /quitar/modificar películas
