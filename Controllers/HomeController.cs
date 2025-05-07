@@ -18,7 +18,12 @@ namespace FGC_PWA2025.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        public IActionResult Contacto()
         {
             return View();
         }
