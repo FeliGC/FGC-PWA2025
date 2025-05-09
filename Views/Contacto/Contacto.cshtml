@@ -13,27 +13,61 @@
         </div>
     </div>
 
-    <h2 class="text-center mb-4">Contacto</h2>
+    <h2 class="text-center my-4 text-primary">Ponete en contacto con nosotros</h2>
     <form>
         <div class="mb-3">
             <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" placeholder="Tu nombre">
+            <input type="text" id="nombre" class="form-control" placeholder="Tu nombre">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" placeholder="nombre@ejemplo.com">
+            <input type="email" id="correo" class="form-control" placeholder="nombre@ejemplo.com">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Mensaje</label>
-            <textarea class="form-control" rows="4" placeholder="Escribí tu mensaje..."></textarea>
+            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribí tu mensaje..."></textarea>
         </div>
 
         <div>
-            <button class="btn btn-info">Enviar</button>
+            <button class="btn btn-success" onclick="EjecutarAlerta()">Enviar</button>
             <button class="btn btn-danger">Cancelar</button>
         </div>
     </form>
+
+    <div class="position-fixed bottom-0 end-0 p-3">​
+    <div id="miToast" class="toast">​
+        <div class="toast-header">​
+            <strong class="me-auto">Perfecto!</strong>​
+            <small>Hace unos segundos</small>​
+            <button class="btn-close" data-bs-dismiss="toast"></button>​
+        </div>​
+        <div class="toast-body">​
+            Tu mensaje fue enviado al sistema!
+            Pronto se contactaran contigo.
+        </div>​
+    </div>​
+</div>
+
+@section Scripts {
+    <script>
+        function EjecutarAlerta() {
+            var nombre = document.getElementById('nombre').value;
+            var correo = document.getElementById('correo').value;
+            var mensaje = document.getElementById('mensaje').value;
+
+            if (nombre && correo && mensaje) {
+                var ejemplo = document.getElementById('miToast');
+                var toast = new bootstrap.Toast(ejemplo);
+                toast.show();
+            } else {
+                alert("Completá todos los campos.");
+            }
+        }
+    </script>
+}
+
 </body>
 
+​
