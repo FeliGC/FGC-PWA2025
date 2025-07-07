@@ -1,0 +1,36 @@
+﻿@model FGC_PWA2025.Models.Pelicula
+<body style="background-color: #f5f5dc;">
+<h1>Eliminar Pelicula</h1>
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Eliminar" asp-controller="Editar" method="post">
+            <input type="hidden" asp-for="ID" />
+            <div class="mb-2">
+                <label class="form-label" asp-for="Titulo">Titulo de la Pelicula</label>
+                <input type="text" class="form-control" asp-for="Titulo" disabled />
+            </div>
+            <div class="mb-2">
+                <label class="form-label" asp-for="Genero">Genero</label>
+                <input type="text" class="form-control" asp-for="Genero" disabled />
+            </div>
+            <div class="mb-2">
+                <label class="form-label" asp-for="Fecha">Fecha</label>
+                <input type="text" class="form-control" asp-for="Fecha" disabled />
+            </div>
+            <div class="mb-2">
+                <label class="form-label" asp-for="Duracion">Duracion</label>
+                <input type="text" class="form-control" asp-for="Duracion" disabled />
+            </div>
+            <div class="mb-2">
+                <label class="form-label" asp-for="Costo">Costo</label>
+                <input type="text" class="form-control" asp-for="Costo" disabled />
+            </div>
+            <div class="mb-2">
+                <button class="btn btn-danger" type="submit">Eliminar</button>
+                <a class="btn btn-info" asp-action="Editar" asp-controller="Editar">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

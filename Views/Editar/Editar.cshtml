@@ -1,0 +1,43 @@
+﻿@model List<FGC_PWA2025.Models.Pelicula>
+<body style="background-color: #f5f5dc;">
+<h1 class="text-center my-4">¡Participa Agregando tus Peliculas!</h1>
+	<div class="card">
+		<div class="card-header">
+			<h4>Listado de Peliculas</h4>
+		</div>
+	</div>	
+	<div class="card-body">	
+
+		<a class="btn btn-success" asp-action="Detalle" asp-controller="Editar" asp-route-id="0">Crear Pelicula</a>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+			<th>Titulo</th>
+			<th>Genero</th>
+			<th>Fecha</th>
+			<th>Duracion</th>
+			<th>Costo</th>
+			<th>Acciones</th>
+			</tr>
+		</thead>
+	<tbody>
+		@foreach (var pelicula in Model)
+		{
+			<tr>
+				<td>@pelicula.Titulo</td>
+				<td>@pelicula.Genero</td>
+				<td>@pelicula.Fecha</td>
+				<td>@pelicula.Duracion</td>
+				<td>@pelicula.Costo</td>
+				<td>
+					<a class="btn btn-primary" asp-action="Detalle" asp-controller="Editar" asp-route-id=@pelicula.ID>Editar</a>
+					<a class="btn btn-danger" asp-action="Eliminar" asp-controller="Editar" asp-route-id=@pelicula.ID>Eliminar</a> 
+				</td>
+			</tr>
+		}
+	</tbody>
+	</table>
+	<partial name="_Posters" />
+	</body>

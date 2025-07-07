@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FGC_PWA2025.Models.Item>
+<body style="background-color: #f5f5dc;">
+<table class="table table-responsive table-hover">
+    <tr>
+        <th>Estado</th>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Sub Total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a class="btn btn-primary" asp-action="Quitar" asp-controller="Carrito" asp-route-id="@item.Pelicula.ID">Quitar</a>
+            </td>
+            <td>@item.Pelicula.ID</td>
+            <td>@item.Pelicula.Titulo</td>
+            <td>@item.Pelicula.Costo</td>
+            <td>@item.Cantidad</td>
+            <td>@(item.Pelicula.Costo * item.Cantidad)</td>
+        </tr>
+    }
+</table>
+
+<div class="align-items-end">
+    <label class="form-label">Total</label>
+    <label class="form-label">@Model.Sum(i => i.Cantidad * i.Pelicula.Costo)</label>
+</div>
+
+<br />
+<a class="btn btn-success" asp-action="Vaciar" asp-controller="Carrito">Comprar</a>
+<a class="btn btn-danger" asp-action="Carrito" asp-controller="Carrito">Volver</a>
+</body>

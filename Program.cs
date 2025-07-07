@@ -1,7 +1,14 @@
+using FGC_PWA2025.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<PeliculasDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("conexionSQL")));
+builder.Services.AddSession();
+
 
 var app = builder.Build();
 
@@ -10,6 +17,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Inicio/Error");
 }
+
+app.UseSession();
 app.UseStaticFiles();
 
 app.UseRouting();
